@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>お知らせ | ホームヘルパーNANA</title>
+    <meta
+      name="description"
+      content="ホームヘルパーNANAのお知らせ一覧ページです。サービス、採用、事業所からのご案内を掲載します。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="メインナビゲーション">
+      <a class="brand" href="./index.html#top" aria-label="ホームヘルパーNANA トップへ">
+        <img src="./assets/cavat-nana-logo.png" alt="ホームヘルパーNANA" />
+      </a>
+      <nav class="nav-links" aria-label="サイト内リンク">
+        <a href="./index.html#about">NANAについて</a>
+        <a href="./service.html">サービス</a>
+        <a href="./strength.html">強み</a>
+        <a href="./recruit.html">採用</a>
+        <a href="./faq.html">FAQ</a>
+        <a href="./company.html">会社概要</a>
+        <a href="./contact.html">お問い合わせ</a>
+      </nav>
+      <a class="header-cta" href="./contact.html">相談する</a>
+    </header>
+
+    <main class="subpage-main">
+      <section class="subpage-hero news-hero">
+        <p class="eyebrow">News</p>
+        <h1>
+          お知らせ
+          <span>NANAからのご案内</span>
+        </h1>
+        <p>
+          サービスに関するご案内、採用情報、事業所からのお知らせを掲載します。
+        </p>
+      </section>
+
+      <section class="section news-page-section">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Information</p>
+            <h2>一覧</h2>
+          </div>
+          <p>
+            新しいお知らせから順に掲載します。カテゴリを分けることで、利用相談・採用・サービス情報を探しやすくします。
+          </p>
+        </div>
+        <div class="news-list">
+          <article id="news-open">
+            <a href="./contact.html">
+              <time datetime="2026-06-02">2026.06.02</time>
+              <span>お知らせ</span>
+              <h3>ホームヘルパーNANAの公式サイトを公開しました</h3>
+              <p>
+                株式会社CAVATが運営するホームヘルパーNANAの公式サイトを公開しました。
+                ご利用に関する相談はお問い合わせフォームよりご連絡ください。
+              </p>
+            </a>
+          </article>
+          <article id="news-recruit">
+            <a href="./recruit.html">
+              <time datetime="2026-06-02">2026.06.02</time>
+              <span>採用</span>
+              <h3>訪問介護スタッフ・登録ヘルパーの採用相談を受け付けています</h3>
+              <p>
+                ホームヘルパーNANAで一緒に働くスタッフの募集情報を掲載しました。
+                職種条件や応募の流れは採用ページをご確認ください。
+              </p>
+            </a>
+          </article>
+          <article id="news-area">
+            <a href="./service.html">
+              <time datetime="2026-06-02">2026.06.02</time>
+              <span>サービス</span>
+              <h3>大阪市西成区を中心とした対応エリアについて</h3>
+              <p>
+                大阪市西成区を中心に、周辺エリアのご相談も受け付けます。
+                詳細な対応可否はお問い合わせ時に確認いたします。
+              </p>
+            </a>
+          </article>
+          <article>
+            <a href="./company.html">
+              <time datetime="2026-06-02">2026.06.02</time>
+              <span>会社情報</span>
+              <h3>会社概要ページを公開しました</h3>
+              <p>
+                株式会社CAVATおよびホームヘルパーNANAの基本情報を掲載しました。
+                所在地や事業内容はこちらからご確認いただけます。
+              </p>
+            </a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <small>© 2026 CAVAT Inc. / Home Helper NANA</small>
+    </footer>
+    <div class="fixed-contact-bar" aria-label="固定お問い合わせメニュー">
+      <a class="fixed-contact-button contact" href="./contact.html">お問い合わせ</a>
+      <a class="fixed-contact-button phone" href="./company.html">会社概要</a>
+    </div>
+    <script>
+      const revealTargets = document.querySelectorAll(".subpage-hero, .section-heading, .news-list article");
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.16 }
+        );
+
+        revealTargets.forEach((target, index) => {
+          target.classList.add("reveal");
+          target.style.setProperty("--delay", `${Math.min((index % 4) * 0.08, 0.24)}s`);
+          observer.observe(target);
+        });
+      } else {
+        revealTargets.forEach((target) => target.classList.add("is-visible"));
+      }
+    </script>
+  </body>
+</html>

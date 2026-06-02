@@ -1,0 +1,23 @@
+.DS_Store
+.swift-module-cache/
+pdf_preview/
+lp_design_assets/
+
+# Verification artifacts
+cavat-desktop-check.png
+cavat-mobile-check.png
+preview_wkitchen_lp_visual.png
+
+# Non-CAVAT drafts and private/reference materials
+wkitchen-lab-lp.html
+wkitchen-lab.css
+wkitchenlab_lp_design.html
+index-before-wkitchen-lp.html
+create_bank_profile_pdf.py
+山田祐輔_銀行提出用_経歴人物紹介資料.pdf
+
+# Unused pulled assets from other work
+assets/medirection-*
+assets/wkitchen-*
+assets/yamada-photo*
+assets/illustration-*

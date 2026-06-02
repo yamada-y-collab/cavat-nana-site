@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>会社概要 | ホームヘルパーNANA</title>
+    <meta
+      name="description"
+      content="ホームヘルパーNANAを運営する株式会社CAVATの会社概要ページです。所在地は大阪市浪速区大国3丁目9-23ローズライフ304号です。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="メインナビゲーション">
+      <a class="brand" href="./index.html#top" aria-label="ホームヘルパーNANA トップへ">
+        <img src="./assets/cavat-nana-logo.png" alt="ホームヘルパーNANA" />
+      </a>
+      <nav class="nav-links" aria-label="サイト内リンク">
+        <a href="./index.html#about">NANAについて</a>
+        <a href="./service.html">サービス</a>
+        <a href="./strength.html">強み</a>
+        <a href="./recruit.html">採用</a>
+        <a href="./faq.html">FAQ</a>
+        <a href="./company.html" aria-current="page">会社概要</a>
+        <a href="./contact.html">お問い合わせ</a>
+      </nav>
+      <a class="header-cta" href="./contact.html">相談する</a>
+    </header>
+
+    <main class="subpage-main">
+      <section class="subpage-hero">
+        <p class="eyebrow">Company</p>
+        <h1>
+          会社概要
+          <span>株式会社CAVAT</span>
+        </h1>
+        <p>
+          ホームヘルパーNANAは、大阪市西成区を中心に、身体介護を中心とした訪問介護サービスを届けます。
+          ケアマネージャーさま、ご家族、地域の関係機関の方に安心して相談いただける事業所を目指します。
+        </p>
+      </section>
+
+      <section class="section company-page-section">
+        <div class="section-heading">
+          <p class="eyebrow">Profile</p>
+          <h2>基本情報</h2>
+        </div>
+        <dl class="company-list company-list-wide" aria-label="会社概要">
+          <div>
+            <dt>法人名</dt>
+            <dd>株式会社CAVAT</dd>
+          </div>
+          <div>
+            <dt>事業所名</dt>
+            <dd>ホームヘルパーNANA</dd>
+          </div>
+          <div>
+            <dt>所在地</dt>
+            <dd>大阪市浪速区大国3丁目9-23 ローズライフ304号</dd>
+          </div>
+          <div>
+            <dt>事業内容</dt>
+            <dd>訪問介護 / 身体介護・生活援助を中心とした在宅生活支援</dd>
+          </div>
+          <div>
+            <dt>対応エリア</dt>
+            <dd>大阪市西成区を中心とした周辺エリア</dd>
+          </div>
+          <div>
+            <dt>相談受付</dt>
+            <dd>ご本人・ご家族・ケアマネージャー・関係機関からの相談に対応</dd>
+          </div>
+          <div>
+            <dt>運営方針</dt>
+            <dd>安全、尊厳、関係機関との情報共有を重視した訪問介護体制を整備</dd>
+          </div>
+          <div>
+            <dt>お問い合わせ</dt>
+            <dd><a href="./contact.html">お問い合わせフォームへ</a></dd>
+          </div>
+        </dl>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <small>© 2026 CAVAT Inc. / Home Helper NANA</small>
+    </footer>
+    <div class="fixed-contact-bar" aria-label="固定お問い合わせメニュー">
+      <a class="fixed-contact-button contact" href="./contact.html">お問い合わせ</a>
+      <a class="fixed-contact-button phone" href="./company.html">会社概要</a>
+    </div>
+    <script>
+      const revealTargets = document.querySelectorAll(".subpage-hero, .section-heading, .company-list div");
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.16 }
+        );
+
+        revealTargets.forEach((target, index) => {
+          target.classList.add("reveal");
+          target.style.setProperty("--delay", `${Math.min((index % 4) * 0.08, 0.24)}s`);
+          observer.observe(target);
+        });
+      } else {
+        revealTargets.forEach((target) => target.classList.add("is-visible"));
+      }
+    </script>
+  </body>
+</html>
