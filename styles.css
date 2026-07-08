@@ -70,7 +70,7 @@ a {
 .section,
 .contact-section,
 .site-footer {
-  width: min(1120px, calc(100% - 32px));
+  width: min(1280px, calc(100% - 32px));
   margin-inline: auto;
 }
 
@@ -83,7 +83,7 @@ a {
   width: 100%;
   min-height: 90px;
   margin-top: 0;
-  padding: 8px max(20px, calc((100% - 1120px) / 2));
+  padding: 8px max(20px, calc((100% - 1280px) / 2));
   display: flex;
   align-items: center;
   gap: 16px;
@@ -209,7 +209,7 @@ main {
   min-height: 76svh;
   padding: 56px 0 44px;
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
   align-items: center;
   gap: 46px;
   overflow: hidden;
@@ -285,7 +285,7 @@ p {
 h1 {
   margin-bottom: 22px;
   color: var(--ink);
-  font-size: clamp(2.45rem, 6vw, 5.35rem);
+  font-size: clamp(2.45rem, 5vw, 4.5rem);
   line-height: 1.05;
   letter-spacing: 0;
 }
@@ -1174,7 +1174,7 @@ h3 {
 .recruit-cta,
 .service-cta,
 .strength-cta {
-  width: min(1120px, calc(100% - 32px));
+  width: min(1280px, calc(100% - 32px));
   margin: 94px auto 0;
   padding: 42px;
   border: 1px solid rgba(228, 179, 33, 0.38);
@@ -1500,7 +1500,7 @@ h3 {
 }
 
 .subpage-hero {
-  width: min(1120px, calc(100% - 32px));
+  width: min(1280px, calc(100% - 32px));
   margin: 0 auto;
   padding: 64px 0 34px;
 }
