@@ -437,6 +437,12 @@ h2 {
   letter-spacing: 0;
 }
 
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
 .section-heading p,
 .office-copy p,
 .contact-section p {
@@ -1188,7 +1194,8 @@ h3 {
 .recruit-cta h2,
 .service-cta h2,
 .strength-cta h2 {
-  max-width: 760px;
+  max-width: none;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
 }
 
 .recruit-cta p,
@@ -1506,7 +1513,7 @@ h3 {
 }
 
 .subpage-hero h1 {
-  max-width: 820px;
+  max-width: none;
 }
 
 .subpage-hero p:not(.eyebrow) {
