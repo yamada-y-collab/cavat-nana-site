@@ -531,7 +531,7 @@ h3 {
 }
 
 .strength-grid {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .feature-grid article,
@@ -879,8 +879,18 @@ h3 {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.job-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .support-grid {
   grid-template-columns: repeat(4, 1fr);
+}
+
+@media (min-width: 941px) {
+  .support-grid.values-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 
 .work-style-grid article,
@@ -1095,6 +1105,13 @@ h3 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1px;
+}
+
+.conditions-list > div:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.conditions-list {
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -1524,7 +1541,7 @@ h3 {
 }
 
 .fixed-contact-button.phone::before {
-  content: "ℹ";
+  content: "☎";
 }
 
 .fixed-contact-button:hover,
