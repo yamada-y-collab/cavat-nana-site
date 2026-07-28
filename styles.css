@@ -2679,3 +2679,14 @@ h2 {
     border-radius: 24px;
   }
 }
+
+/* Hero catch copy: チラシと同じ文言に合わせた行送り調整 */
+.hero-copy h1 {
+  font-size: clamp(2.3rem, 4vw, 3.6rem);
+}
+
+@media (max-width: 560px) {
+  .hero-copy h1 {
+    font-size: clamp(1.85rem, 9vw, 2.3rem);
+  }
+}
