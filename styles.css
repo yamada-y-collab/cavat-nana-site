@@ -2690,3 +2690,40 @@ h2 {
     font-size: clamp(1.85rem, 9vw, 2.3rem);
   }
 }
+
+/* 事業所番号 */
+.document-code {
+  justify-self: start;
+  padding: 5px 10px;
+  color: var(--sage-dark);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 241, 230, 0.6);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+.office-code-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+}
+
+.office-code-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.office-code-list span {
+  min-width: 12em;
+  color: var(--text);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
