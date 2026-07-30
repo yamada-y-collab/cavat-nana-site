@@ -1,24 +1,26 @@
 # ============================================================
-# ホームヘルパーNANA 公式サイト（エックスサーバー用）
-# ドキュメントルートに設置する。
+# ホームヘルパーNANA 公式サイト（エックスサーバー）
+# public_html 直下に設置する。
+# ------------------------------------------------------------
+# 先頭2行はXserverが自動生成したXアクセラレータ（Nginxキャッシュ）
+# 設定。消すと高速化が無効になるため必ず残すこと。
 # ============================================================
+SetEnvIf Request_URI ".*" Ngx_Cache_NoCacheMode=off
+SetEnvIf Request_URI ".*" Ngx_Cache_AllCacheMode
 
 # --- 文字コード ---
 AddDefaultCharset UTF-8
 
 # --- 常時SSL（http → https）＋ www なしに統一 ---
-# ※公開ドメイン確定後、RewriteCond の www 判定はそのままで動作する。
-<IfModule mod_rewrite.c>
-  RewriteEngine On
+RewriteEngine on
 
-  # http でのアクセスを https へ
-  RewriteCond %{HTTPS} off
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+# http でのアクセスを https へ（Xserver標準の記述）
+RewriteCond %{HTTPS} !on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
-  # www 付きを www なしへ統一
-  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-  RewriteRule ^(.*)$ https://%1%{REQUEST_URI} [R=301,L]
-</IfModule>
+# www 付きを www なしへ統一
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ https://%1%{REQUEST_URI} [R=301,L]
 
 # --- エラーページ ---
 ErrorDocument 404 /404.html
@@ -26,7 +28,7 @@ ErrorDocument 404 /404.html
 # --- ディレクトリ一覧の表示を無効化 ---
 Options -Indexes
 
-# --- キャッシュ（画像・CSS・JSは長め、HTMLは短め） ---
+# --- キャッシュ ---
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType text/html "access plus 10 minutes"
@@ -46,7 +48,7 @@ Options -Indexes
   Header set X-Frame-Options "SAMEORIGIN"
 </IfModule>
 
-# --- 移行前の暫定ページや管理用ファイルへの直接アクセスを禁止 ---
-<FilesMatch "^\.(htaccess|htpasswd|gitignore)$">
+# --- 設定ファイルへの直接アクセスを禁止 ---
+<FilesMatch "^\.(htaccess|htpasswd|gitignore|user\.ini)$">
   Require all denied
 </FilesMatch>
