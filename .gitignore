@@ -21,3 +21,6 @@ assets/medirection-*
 assets/wkitchen-*
 assets/yamada-photo*
 assets/illustration-*
+
+# OG画像の生成元（ローカル専用・公開しない）
+_og-source.html
