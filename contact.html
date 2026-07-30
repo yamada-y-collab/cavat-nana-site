@@ -56,8 +56,11 @@
             内容を確認後、担当者よりご連絡いたします。電話またはメールのどちらか一方をご入力ください。
           </p>
         </div>
-        <form class="contact-form" name="contact" method="POST" data-netlify="true" aria-label="お問い合わせフォーム">
-          <input type="hidden" name="form-name" value="contact" />
+        <form class="contact-form" name="contact" method="POST" action="./contact.php" aria-label="お問い合わせフォーム">
+          <div class="hp-field" style="position: absolute; left: -9999px" aria-hidden="true">
+            <label for="contact-company">会社名（入力不要）</label>
+            <input id="contact-company" name="company" type="text" tabindex="-1" autocomplete="off" />
+          </div>
           <div class="form-row">
             <label for="contact-name">お名前<span>必須</span></label>
             <input id="contact-name" name="name" type="text" autocomplete="name" placeholder="例）山田 太郎" required />
