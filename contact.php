@@ -9,7 +9,7 @@ const TO_EMAIL = 'CHANGE-ME@example.com';
 
 // 送信元アドレス（公開ドメインと同じドメインのアドレスにすること。
 // 例: info@サイトのドメイン。Xserverのメール設定で作成しておく）
-const FROM_EMAIL = 'CHANGE-ME@example.com';
+const FROM_EMAIL = 'info@cavat-kaigo.com';
 
 const FROM_NAME = 'ホームヘルパーNANA お問い合わせフォーム';
 
